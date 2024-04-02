@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "483622794125",
+    "project_id": "chatappflutter-987d0",
+    "storage_bucket": "chatappflutter-987d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483622794125:android:9f9e7f1bb2df6d2763c3c4",
+        "android_client_info": {
+          "package_name": "com.example.chatapp_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvspTzFpd4fWumTrS4FwqM-E64sjY368w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
