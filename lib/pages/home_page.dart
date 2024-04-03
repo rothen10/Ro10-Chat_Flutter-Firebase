@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:chatapp_firebase/helper/helper_function.dart';
 import 'package:chatapp_firebase/pages/auth/login_page.dart';
 import 'package:chatapp_firebase/pages/profile_page.dart';
@@ -8,6 +10,8 @@ import 'package:chatapp_firebase/widgets/group_tile.dart';
 import 'package:chatapp_firebase/widgets/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'utils.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,6 +32,19 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     gettingUserData();
+  }
+
+  //recuperer la pp
+  Uint8List? _image;
+
+  void selectImage() async {
+    Uint8List? img = await pickImage(ImageSource.gallery);
+    if (img!=null) {
+      setState(() {
+        _image = img;
+      });
+    }
+    return;
   }
 
   // string manipulation
@@ -86,11 +103,33 @@ class _HomePageState extends State<HomePage> {
           child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 50),
         children: <Widget>[
-          Icon(
-            Icons.account_circle,
-            //Image.network(),
-            size: 150,
-            color: Colors.grey[700],
+          // Icon(
+          //   Icons.account_circle,
+          //   //Image.network(),
+          //   size: 150,
+          //   color: Colors.grey[700],
+          // ),
+          _image != null
+              ? CircleAvatar(
+                  radius: 64,
+                  backgroundImage: MemoryImage(_image!),
+                )
+              : const CircleAvatar(
+                  radius: 64,
+                  backgroundImage: NetworkImage(
+                      "https://images.app.goo.gl/qJiBm3XKTFwjDutu7"),
+                ),
+          Positioned(
+            bottom: -10,
+            left: 80,
+            child: IconButton(
+              onPressed: () {
+                selectImage();
+              },
+              icon: const Icon(
+                Icons.add_a_photo,
+              ),
+            ),
           ),
           const SizedBox(
             height: 15,
