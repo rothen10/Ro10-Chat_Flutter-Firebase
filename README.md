@@ -4,9 +4,9 @@
 <hr/>
 <center>
 <div style="display: flex;">
- ---<img src = './1.png' width="250" height="550" alt="LOGIN PAGE"/>---
-    <img src = './2.png' width="250" height="550" alt="REGISTER PAGE"/>---
-    <img src = './3.png' width="250" height="550" alt="CHAT LIST PAGE"/>---
+ ---<img src = './1.png' width="250" height="550" title="LOGIN PAGE"/>---
+    <img src = './2.png' width="250" height="550" title="REGISTER PAGE"/>---
+    <img src = './3.png' width="250" height="550" title="CHAT LIST PAGE"/>---
 </div>
 </center>
 
